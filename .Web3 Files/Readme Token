@@ -1,0 +1,19 @@
+Functions :
+
+_TransferOtherTokensERC20    :
+Transfers any ERC20 token gifted to smart contract to any wallet address.
+
+lock_time       :
+Lock all the transfer till given timestamp.
+
+add_access_address      :
+Adds address access who can transfer token between lock period.
+Address can only be added by admin_owner1 and admin_owner2 accounts
+
+
+add_access_address      :
+Removes address access who can transfer token between lock period.
+Address can only be added by admin_owner1 and admin_owner2 accounts
+
+_BalanceOtherTokensERC20      :
+Retrieves balance of any ERC20 token given to the smart contract 
