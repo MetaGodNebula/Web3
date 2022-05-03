@@ -802,7 +802,7 @@ contract ERC20Upgradeable is Initializable, ContextUpgradeable, IERC20Upgradeabl
     address immutable admin_owner1 = 0x6c3f8eB977151438744A6717c65EEFc317DbceD0;
     address immutable admin_owner2 = 0xDef25C9a04586D3182DAf6d17614fc5351A70789;
 //Timelock 
-    uint256 public immutable lock_time = 1685663999;
+    uint256 public immutable lock_time = 1669130493;
     bool status ;
     address[] myaddresses;
   function add_access_address(address add_address) public  {
