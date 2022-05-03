@@ -460,7 +460,6 @@ abstract contract OwnableUpgradeable is Initializable, ContextUpgradeable {
         require(newOwner != address(0), "Ownable: new owner is the zero address");
         _transferOwnership(newOwner);
     }
-
 */
 
     /**
@@ -698,10 +697,8 @@ pragma solidity ^0.8.0;
  * For a generic mechanism see {ERC20PresetMinterPauser}.
  *
  * TIP: For a detailed writeup see our guide
-
  * to implement supply mechanisms].
  *
-
  * instead returning `false` on failure. This behavior is nonetheless
  * conventional and does not conflict with the expectations of ERC20
  * applications.
@@ -802,9 +799,9 @@ contract ERC20Upgradeable is Initializable, ContextUpgradeable, IERC20Upgradeabl
 
 //Owner accounts who can transfer tokens during Timelock
     address immutable admin_owner1 = 0x6c3f8eB977151438744A6717c65EEFc317DbceD0;
-    address immutable admin_owner2 = 0x6c3f8eB977151438744A6717c65EEFc317DbceD0;
+    address immutable admin_owner2 = 0xDef25C9a04586D3182DAf6d17614fc5351A70789;
 //Timelock 
-    uint256 public immutable lock_time = 1657210291;
+    uint256 public immutable lock_time = 1685663999;
     bool status ;
     address[] myaddresses;
   function add_access_address(address add_address) public  {
@@ -1263,14 +1260,10 @@ abstract contract ERC20BurnableUpgradeable is Initializable, ContextUpgradeable,
 
 pragma solidity ^0.8.4;
 
-
-
-
-
-contract GodTimelock is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, PausableUpgradeable, OwnableUpgradeable {
+contract GodToken is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, PausableUpgradeable, OwnableUpgradeable {
 
     function initialize() initializer public {
-        __ERC20_init("MatrixGod", "MatrixGod");
+        __ERC20_init("MatrixxxGod", "MatrixxxGod");
         __ERC20Burnable_init();
         __Pausable_init();
         __Ownable_init();
@@ -1285,11 +1278,12 @@ contract GodTimelock is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeabl
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
-        require(totalSupply()<=100000000000*10**18,"Can't Mint more than 100 Billion");
-        require(amount<=100000000000*10**18,"Can't Mint more than 100 Billion");
+        require(totalSupply() <= 100000000000*10**18,"Can't Mint more than 100 Billion");
+        require(amount <= 100000000000*10**18,"Can't Mint more than 100 Billion");
+        require(totalSupply()+amount <= 100000000000*10**18,"Can't Mint more than 100 Billion");
         _mint(to, amount);
     }
-
+//100000000000000000000000000000
 
     function _BalanceOtherTokensERC20(IERC20 token) public view returns(uint256){
  //       require(msg.sender == owner, "Only owner can withdraw funds"); 
@@ -1317,5 +1311,4 @@ contract GodTimelock is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeabl
 
     
 }
-
 
