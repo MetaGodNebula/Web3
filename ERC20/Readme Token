@@ -19,3 +19,5 @@ _BalanceOtherTokensERC20      :
 Retrieves balance of any ERC20 token given to the smart contract 
 
 Tax = 0.25% on every Transfer 
+
+Total Supply = 100000000000*10**18
